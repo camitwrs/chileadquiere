@@ -1,8 +1,7 @@
 {
-  "framework": "vite",
+  "framework": null,
   "buildCommand": "pnpm run build",
   "outputDirectory": "dist/public",
-  "ignoreCommand": "echo 'Skipping backend build'",
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [

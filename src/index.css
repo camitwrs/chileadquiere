@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -123,9 +124,11 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
+* {
+  /* Use CSS variable for ring color via Tailwind arbitrary color syntax. */
+    @apply border-[var(--border)] ring-[var(--ring)];
+}
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
