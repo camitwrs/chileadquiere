@@ -173,7 +173,7 @@ const Stepper: FC<{ step: number }> = ({ step }) => {
         
         {/* Vista Móvil (Simplificada) */}
         <div className="md:hidden text-center my-2 w-full pt-2">
-            <div className="text-base font-semibold text-bg-blue-600">{steps[step - 1]}</div>
+            <div className="text-base font-semibold text-primary">{steps[step - 1]}</div>
             <div className="text-sm text-gray-500">Paso {step} de {steps.length}</div>
         </div>
     </div>
@@ -1439,8 +1439,8 @@ const RegistroInner: FC = () => {
         ></div>
         
         
-        {/* Capa de overlay (Opcional, si quieres un ligero tono sobre la imagen) */}
-        <div className="absolute inset-0 bg-slate-800 opacity-70 z-10"></div>
+    {/* Capa de overlay: NO debe bloquear punteros para que los formularios sean interactivos en móvil */}
+    <div className="absolute inset-0 bg-slate-800 opacity-70 z-0 pointer-events-none"></div>
 
         {/* Encabezado General del Proceso - Se mantiene en la capa superior */}
         <header className="py-8 bg-white shadow-sm border-b border-gray-100 relative z-10">
@@ -1458,17 +1458,17 @@ const RegistroInner: FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">   
                
                 {/* Contenedor Flexbox para Logo y Títulos */}
-                <div className="flex items-center space-x-4">      
+                <div className="flex flex-col sm:flex-row items-center sm:space-x-4 gap-3 sm:gap-0 w-full">      
                     {/* Logo o Imagen */}
                     {/* Ajusta el src y las clases de tamaño (ej. h-10 w-10) según tu logo */}
-                    <img 
-                        className="h-15 w-15" 
-                        src="/logo.png" 
-                        alt="Logo de la Empresa" 
+                    <img
+                        className="h-12 w-12 object-contain"
+                        src="/logo.png"
+                        alt="Logo de la Empresa"
                     />
                     {/* Contenedor de Títulos */}
-                    <div>
-                        <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">
+                    <div className="text-center sm:text-left w-full">
+                        <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
                             Registro de Proveedor
                         </h1>
                         <p className="mt-2 text-sm text-gray-500">

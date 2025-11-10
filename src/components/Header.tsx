@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { VITE_APP_LOGO } from "@/const";
+import { useLocation } from "wouter";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -84,13 +85,13 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
-                <div className="flex flex-col sm:flex-row sm:space-x-3 sm:space-y-0 space-y-2 pt-3 border-t border-border mt-3">
-                  <Button variant="outline" size="sm" className="w-full sm:w-auto">
-                    Iniciar Sesión
-                  </Button>
-                  <Button size="sm" className="w-full sm:w-auto">
-                    Registrarse
-                  </Button>
+                <div className="flex flex-col sm:flex-row sm:space-x-3 sm:space-y-0 space-y-2 pt-3 border-white   mt-3">
+                 <Button size="sm" asChild>
+              <a href="/register">Registrarse</a>
+            </Button>
+            <Button variant="outline" size="sm" asChild>
+              <a href="/login">Iniciar Sesión</a>
+            </Button>
                 </div>
               </nav>
             </div>

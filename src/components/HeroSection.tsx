@@ -84,7 +84,7 @@ const HeroSection: React.FC = () => {
               size="lg"
               className="min-w-[260px]"
             >
-              ¿Eres Proveedor? Regístrate Aquí
+              <a href="/register">¿Eres Proveedor? Regístrate Aquí</a>
             </Button>
           </div>
         </div>
